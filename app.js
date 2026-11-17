@@ -1,5 +1,6 @@
 // ============================================================================
-// AL-MIZAN AL-HADITH (الميزان الحديث) — CORE SCHOLARLY ENGINE & REPOSITORY DATA
+// AL-MIZAN AL-HADITH (الميزان الحديث) — CORE SCHOLARLY ENGINE, 37 PDF BOOKS
+// GALLERY & PRIVATE ADMIN UPLOAD PORTAL
 // Principal Researcher: Abu Muhammad Khurram Shahzad (أبو محمد خرم شہزاد)
 // ============================================================================
 
@@ -72,7 +73,7 @@ const HADITH_DATA = [
       { name: "Prophet Muhammad ﷺ", rank: "Masdar al-Wahy" },
       { name: "Abu Hurayrah (r.a.)", rank: "Hafiz al-Sahabah" },
       { name: "Yazid ibn al-Asamm", rank: "Thiqah" },
-      { name: "kathir ibn Hisham", rank: "Thiqah" },
+      { name: "Kathir ibn Hisham", rank: "Thiqah" },
       { name: "Imam Muslim", rank: "Hujjah" }
     ]
   },
@@ -94,190 +95,73 @@ const HADITH_DATA = [
   }
 ];
 
-const BOOKS_BY_KHURRAM_SHAHZAD = [
-  {
-    id: "BK-01",
-    code: "VOL. I — USUL AL-TAHQIQ",
-    arabicTitle: "الميزان الحديث في أصول التخريج ودراسة الأسانيد",
-    urduTitle: "المیزان الحدیث: اصولِ تخریج اور دراسۃ الاسانید کا جدید منہج",
-    englishTitle: "Al-Mizan Al-Hadith: Advanced Methodology in Hadith Verification & Isnad Criticism",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1447 AH / 2026",
-    pages: "640 Pages",
-    language: "Arabic / Urdu / English Abstract",
-    domain: "Usul al-Hadith & Takhrij",
-    synopsis: "The flagship encyclopedic treatise of the Center. Establishes a rigorous 12-stage verification protocol combining classical Jarh wa Ta'dil (Ibn Hajar, Al-Dhahabi, Al-Daraqutni) with computational cross-chain mapping.",
-    keyChapters: [
-      "Chapter 1: Epistemological Foundations of the Prophetic Sunnah",
-      "Chapter 2: Identifying Hidden Defects ('Ilal al-Hadith) in Apparently Sound Chains",
-      "Chapter 3: Resolving Apparent Contradictions (Mukhtalif al-Hadith) with Precision",
-      "Chapter 4: Digital & Manuscript Collation Standards at Al-Mizan Center"
-    ],
-    excerptArabic: "إِنَّ صِنَاعَةَ التَّحْقِيقِ الْحَدِيثِيِّ لَيْسَتْ مُجَرَّدَ نَقْلٍ آليٍّ لِأَحْكَامِ الْمُتَقَدِّمِينَ، بَلْ هِيَ فَهْمٌ دَقِيقٌ لِقَوَاعِدِ النَّقْدِ وَمَوَازِينِ التَّرْجِيحِ عِنْدَ أَئِمَّةِ الْعِلَلِ.",
-    excerptEnglish: "True Hadith verification is not the mechanical copying of past rulings; rather, it is a deep mastery of the critical scales (Al-Mizan) used by the early Imams of 'Ilal to weigh every narrator and subtle transmission variance.",
-    citation: "Shahzad, Abu Muhammad Khurram. Al-Mizan Al-Hadith fi Usul al-Takhrij wa Dirasat al-Asanid. Al-Mizan Al-Hadith Islamic Research Center Press, 2026."
-  },
-  {
-    id: "BK-02",
-    code: "VOL. II — 'ILAL & RIJAL",
-    arabicTitle: "كشف العلل الخفية في المرويات المشهورة",
-    urduTitle: "مشہور روایات میں عللِ خفیہ کی تحقیق اور میزانِ نقد",
-    englishTitle: "Unveiling Hidden Defects ('Ilal) in Widely Circulated Narrations",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1446 AH / 2025",
-    pages: "512 Pages",
-    language: "Urdu & Classical Arabic",
-    domain: "'Ilal al-Hadith & Narrator Criticism",
-    synopsis: "An exhaustive critical examination of 300 widely quoted narrations in contemporary pulpits and academic works, separating authentic Prophetic guidance from weak, interpolated (Mudraj), and fabricated reports.",
-    keyChapters: [
-      "Section I: The Distinction Between Mashhur on Tongues vs. Sahih in Chains",
-      "Section II: Case Studies in Tadlis and Irsal Khafi",
-      "Section III: Comprehensive Graded Index of 300 Examined Traditions"
-    ],
-    excerptArabic: "كَمْ مِنْ حَدِيثٍ شَاعَ عَلَى أَلْسِنَةِ الْوُعَّاظِ لَا يَثْبُتُ عِنْدَ النَّقْدِ الْمِيزَانِيِّ، وَفِي الصَّحِيحِ الثَّابِتِ غُنْيَةٌ وَكِفَايَةٌ لِكُلِّ بَاحِثٍ عَنِ الْحَقِّ.",
-    excerptEnglish: "How many narrations circulate widely on the tongues of speakers yet fail the test of the critical scale—while in the established Sahih Sunnah lies complete sufficiency and light for every seeker of truth.",
-    citation: "Shahzad, Abu Muhammad Khurram. Kashf al-'Ilal al-Khafiyyah fi al-Marwiyyat al-Mashhurah. Al-Mizan Al-Hadith Research Center, 2025."
-  },
-  {
-    id: "BK-03",
-    code: "VOL. III — FIQH AL-SUNNAH",
-    arabicTitle: "الجمع بين النصوص النبوية ومقاصد الشريعة الإسلامية",
-    urduTitle: "نصوصِ نبویہ کی تطبیق اور مقاصدِ شریعت کا توازن",
-    englishTitle: "Harmonizing Prophetic Texts & the Higher Objectives of Islamic Law",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1446 AH / 2025",
-    pages: "488 Pages",
-    language: "Urdu / Arabic / English",
-    domain: "Fiqh al-Hadith & Maqasid",
-    synopsis: "Demonstrates how authentic Hadith texts form a coherent, balanced legal and ethical architecture when understood through the methodology of the Salaf and classical juristic synthesis.",
-    keyChapters: [
-      "Part 1: Principles of Al-Jam' wa al-Tawfiq (Textual Harmonization)",
-      "Part 2: Contextualizing Asbab ورود الحديث (Occasions of Prophetic Statements)",
-      "Part 3: Contemporary Bioethical, Financial, and Social Rulings in Light of Sunnah"
-    ],
-    excerptArabic: "النُّصُوصُ الشَّرْعِيَّةُ كَالْجَسَدِ الْوَاحِدِ يُفَسِّرُ بَعْضُهَا بَعْضًا، وَلَا يَسْتَقِيمُ الْفِقْهُ إِلَّا بِجَمْعِ طُرُقِ الْبَابِ الْوَاحِدِ فِي كِفَّةِ الْمِيزَانِ.",
-    excerptEnglish: "Sacred texts function as a single unified organism where one part illuminates another; sound jurisprudence is only achieved when all narrations on a topic are gathered together in the scale of balance.",
-    citation: "Shahzad, Abu Muhammad Khurram. Al-Jam' bayna al-Nusus al-Nabawiyyah wa Maqasid al-Shari'ah. Al-Mizan Al-Hadith Press, 2025."
-  },
-  {
-    id: "BK-04",
-    code: "VOL. IV — DEFENSE OF SUNNAH",
-    arabicTitle: "حجية السنة النبوية والرد على الشبهات المعاصرة",
-    urduTitle: "حجیتِ حدیث اور دورِ حاضر کے تشکیکی شبہات کا علمی محاکمہ",
-    englishTitle: "The Epistemic Authority of the Sunnah & Refutation of Modern Skepticism",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1445 AH / 2024",
-    pages: "576 Pages",
-    language: "English & Urdu Dual Edition",
-    domain: "Epistemology & Defense of Hadith",
-    synopsis: "A landmark intellectual response to Orientalist and modernist critiques of Hadith transmission, documenting early 1st-century AH written Sahifas, memory verification protocols, and manuscript continuity.",
-    keyChapters: [
-      "Chapter 1: Written Hadith Sahifas in the Lifetime of the Prophet ﷺ and Companions",
-      "Chapter 2: Mathematical Probability & Multi-Regional Cross-Verification in Isnad",
-      "Chapter 3: Deconstructing Revisionist Claims on Early Hadith Codification"
-    ],
-    excerptArabic: "لَمْ تَشْهَدْ أُمَّةٌ مِنَ الْأُمَمِ نِظَامًا تَوْثِيقِيًّا كَنِظَامِ الْإِسْنَادِ الَّذِي حَفِظَ اللهُ بِهِ سُنَّةَ نَبِيِّهِ ﷺ مِنْ كُلِّ دَخِيلٍ.",
-    excerptEnglish: "No civilization in human history has witnessed an archival and biographical verification system matching the Isnad—through which Allah preserved the Sunnah of His Messenger ﷺ with unmatched precision.",
-    citation: "Shahzad, Abu Muhammad Khurram. Hujjiyyat al-Sunnah al-Nabawiyyah wa al-Radd 'ala al-Shubuhat al-Mu'asirah. Al-Mizan Al-Hadith Center, 2024."
-  },
-  {
-    id: "BK-05",
-    code: "VOL. V — MANUSCRIPT HERITAGE",
-    arabicTitle: "تحقيق المخطوطات الحديثية النادرة: دراسة وتأصيل",
-    urduTitle: "نادر مخطوطاتِ حدیث کی تحقیق، مقابلہ اور اشاعت کے اصول",
-    englishTitle: "Critical Edition of Rare Hadith Manuscripts: Paleography & Sama'at Analysis",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1445 AH / 2024",
-    pages: "420 Pages",
-    language: "Arabic / Urdu",
-    domain: "Manuscript Tahqiq & Codicology",
-    synopsis: "A practical and theoretical manual on reading audition certificates (Sama'at), colophons, marginalia, and orthographic scripts in classical Islamic manuscripts from Damascus, Istanbul, Medina, and the Subcontinent.",
-    keyChapters: [
-      "Chapter 1: Deciphering Sama'at and Ijazah Registers on Manuscript Folios",
-      "Chapter 2: Stemmatic Collation of Mother Copies (Al-Usul al-Khattiyyah)",
-      "Chapter 3: Critical Apparatus Formatting for International Islamic Editions"
-    ],
-    excerptArabic: "المخطوطات الإسلامية كنوزٌ ناطقةٌ بشرف هذه الأمة في خدمة الوحيين، وتحقيقها أمانة علمية تقتضي الصبر والبصيرة.",
-    excerptEnglish: "Islamic manuscripts are living witnesses to this Ummah's devotion to revelation; editing them critically is a sacred trust requiring paleographic insight and scholarly patience.",
-    citation: "Shahzad, Abu Muhammad Khurram. Tahqiq al-Makhtutat al-Hadithiyyah al-Nadirah. Al-Mizan Al-Hadith Center, 2024."
-  },
-  {
-    id: "BK-06",
-    code: "VOL. VI — ETHICS OF THE SCHOLAR",
-    arabicTitle: "حلية طالب الحديث وآداب البحث العلمي الرصين",
-    urduTitle: "طالبِ علمِ حدیث کا زیور اور آدابِ تحقیق و اختلاف",
-    englishTitle: "Ornament of the Hadith Researcher: Ethics of Inquiry & Scholarly Disagreement",
-    author: "Abu Muhammad Khurram Shahzad",
-    year: "1447 AH / 2026",
-    pages: "365 Pages",
-    language: "Urdu / Arabic / English",
-    domain: "Tazkiyah & Academic Adab",
-    synopsis: "Synthesizing spiritual refinement with academic rigor, this volume guides researchers and students of sacred knowledge on humility, objectivity, intellectual honesty, and the etiquette of scholarly critique.",
-    keyChapters: [
-      "Chapter 1: Sincerity (Ikhlas) as the First Condition of Sacred Research",
-      "Chapter 2: Justice and Objectivity When Critiquing Opinions (Adab al-Ikhtilaf)",
-      "Chapter 3: Daily Regimen of the Muhaddith Between Worship and Investigation"
-    ],
-    excerptArabic: "العلم بلا أدب كالنار بلا حطب، وشرف الباحث في الحديث أن يظهر أثر السنة في سمته وعدله وإنصافه قبل قلمه.",
-    excerptEnglish: "The true honor of the researcher of Hadith is that the light of the Prophetic Sunnah manifests in their justice, fairness, and character even before it flows from their pen.",
-    citation: "Shahzad, Abu Muhammad Khurram. Hilyat Talib al-Hadith wa Adab al-Bahth al-'Ilmi. Al-Mizan Al-Hadith Press, 2026."
-  }
-];
-
 const UI_TRANSLATIONS = {
   en: {
     dir: "ltr",
     navHome: "Sanctuary",
+    navBooks: "PDF Books Library (37+)",
     navTahqiq: "Hadith Workbench",
-    navBooks: "Books of Khurram Shahzad",
     navPillars: "Research Pillars",
-    navManuscripts: "Manuscripts & Journal",
+    navManuscripts: "Journal & Contact",
     heroEyebrow: "GLOBAL CENTER FOR PROPHETIC TRADITION & CRITICAL TAHQIQ",
     heroTitle: "Weighing Sacred Heritage on the <span>Scale of Authentic Proof</span>",
-    heroDesc: "Welcome to Al-Mizan Al-Hadith (المیزان الحدیث) — an international Islamic research sanctuary dedicated to epistemological rigor in Hadith sciences, Isnad verification, manuscript preservation, and the authored works of Researcher Abu Muhammad Khurram Shahzad.",
-    ctaExploreBooks: "Explore Books of Abu Muhammad Khurram Shahzad",
+    heroDesc: "Welcome to Al-Mizan Al-Hadith (المیزان الحدیث) — an international Islamic research sanctuary dedicated to epistemological rigor in Hadith sciences, Isnad verification, and free global access to all 37+ PDF books and monographs of Researcher Abu Muhammad Khurram Shahzad.",
+    ctaExploreBooks: "Browse & Download All 37 PDF Books (Free)",
     ctaWorkbench: "Launch Hadith Verification Workbench"
   },
   ur: {
     dir: "rtl",
     navHome: "مرکزِ تحقیق",
+    navBooks: "کتب و تصانیف (37+ PDF)",
     navTahqiq: "میزانِ تحقیقِ حدیث",
-    navBooks: "تصانیفِ ابو محمد خرم شہزاد",
     navPillars: "شعبہ جاتِ تحقیق",
-    navManuscripts: "مخطوطات و مجلہ",
+    navManuscripts: "مقالات و رابطہ",
     heroEyebrow: "علومِ نبوت، تحقیقِ اسانید اور احیائے تراث کا عالمی علمی مرکز",
     heroTitle: "میزانِ عدل و برہان پر <span>سنتِ نبویہ ﷺ کی مستند تحقیق</span>",
-    heroDesc: "مرکز ’’المیزان الحدیث‘‘ میں خوش آمدید — یہ عالمی تحقیقی ادارہ علومِ حدیث، جرح و تعدیل، عللِ خفیہ کی تحقیق، نادر مخطوطات کے احیاء اور محقق ابو محمد خرم شہزاد حفظہ اللہ کی علمی و تحقیقی تصانیف کی اشاعت کے لیے وقف ہے۔",
-    ctaExploreBooks: "محقق ابو محمد خرم شہزاد کی کتب کا مطالعہ کریں",
+    heroDesc: "مرکز ’’المیزان الحدیث‘‘ میں خوش آمدید — یہ عالمی تحقیقی ادارہ علومِ حدیث، جرح و تعدیل، عللِ خفیہ کی تحقیق اور محقق ابو محمد خرم شہزاد حفظہ اللہ کی 37 سے زائد علمی و تحقیقی تصانیف (PDF) کے مفت مطالعہ اور ڈاؤن لوڈ کے لیے وقف ہے۔",
+    ctaExploreBooks: "تمام 37 کتب (PDF) مفت ڈاؤن لوڈ کریں",
     ctaWorkbench: "جدید انجن برائے تحقیقِ حدیث"
   },
   ar: {
     dir: "rtl",
     navHome: "الرئيسية",
+    navBooks: "مكتبة المؤلفات (37+ PDF)",
     navTahqiq: "منصة تحقيق الحديث",
-    navBooks: "مؤلفات أبي محمد خرم شهزاد",
     navPillars: "أقسام المركز",
-    navManuscripts: "المخطوطات والمجلة",
+    navManuscripts: "الأبحاث والتواصل",
     heroEyebrow: "المركز العالمي لعلوم السنة النبوية والتحقيق العلمي الرصين",
     heroTitle: "تحقيق التراث النبوي الشريف على <span>ميزان البرهان والإسناد</span>",
-    heroDesc: "مرحباً بكم في مركز «الميزان الحديث» للبحوث والدراسات الإسلامية — صرح علمي عالمي يُعنى بتحقيق المتون ودراسة الأسانيد وعلل الحديث ونشر مؤلفات الباحث المحقق أبي محمد خرم شهزاد.",
-    ctaExploreBooks: "تصفح مؤلفات الباحث أبي محمد خرم شهزاد",
+    heroDesc: "مرحباً بكم في مركز «الميزان الحديث» للبحوث والدراسات الإسلامية — صرح علمي عالمي يُعنى بتحقيق المتون ودراسة الأسانيد ونشر كافة مؤلفات الباحث المحقق أبي محمد خرم شهزاد بصيغة PDF مجاناً.",
+    ctaExploreBooks: "تصفح وحمّل جميع المؤلفات (37 كتاباً PDF)",
     ctaWorkbench: "بوابة التحقيق ودراسة الأسانيد"
   }
 };
 
-// State
+let ALL_PDF_BOOKS = [];
 let currentFilter = "all";
 let currentSearch = "";
 let currentBookFilter = "all";
-let currentLang = "en";
+let currentBookSearch = "";
+let isAdminUnlocked = false;
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   initHijriDate();
   renderHadithWorkbench();
-  renderScholarBooks();
+  await loadBooksCatalog();
   setupEventListeners();
+  checkUrlForAdminTrigger();
 });
+
+async function loadBooksCatalog() {
+  try {
+    const res = await fetch("books.json?t=" + Date.now());
+    ALL_PDF_BOOKS = await res.json();
+  } catch (err) {
+    console.error("Failed to fetch books.json", err);
+    ALL_PDF_BOOKS = [];
+  }
+  renderScholarBooksTiles();
+}
 
 function initHijriDate() {
   const badge = document.getElementById("hijri-date-display");
@@ -294,6 +178,148 @@ function initHijriDate() {
   }
 }
 
+// ============================================================================
+// RENDER 37+ PDF BOOKS IN TILE FORMAT WITH FRONT-PAGE THUMBNAILS
+// ============================================================================
+function renderScholarBooksTiles() {
+  const grid = document.getElementById("khurram-books-grid");
+  if (!grid) return;
+
+  const q = currentBookSearch.trim().toLowerCase();
+  const filteredBooks = ALL_PDF_BOOKS.filter((b) => {
+    const matchCat = currentBookFilter === "all" || b.category === currentBookFilter;
+    const matchQuery =
+      !q ||
+      (b.title && b.title.toLowerCase().includes(q)) ||
+      (b.englishTitle && b.englishTitle.toLowerCase().includes(q)) ||
+      (b.author && b.author.toLowerCase().includes(q));
+    return matchCat && matchQuery;
+  });
+
+  const countBadge = document.getElementById("books-total-count");
+  if (countBadge) {
+    countBadge.textContent = `Showing ${filteredBooks.length} of ${ALL_PDF_BOOKS.length} Official PDF Books`;
+  }
+
+  if (filteredBooks.length === 0) {
+    grid.innerHTML = `
+      <div class="hadith-card" style="grid-column: 1 / -1; text-align:center; padding: 3rem;">
+        <h3 style="color: var(--gold-primary); margin-bottom:0.5rem;">No Matching Books Found</h3>
+        <p style="color: var(--text-secondary);">Try searching for another title or select "All Books (${ALL_PDF_BOOKS.length})" above.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filteredBooks
+    .map((book) => {
+      const directDownloadUrl = book.downloadUrl || `https://drive.google.com/uc?export=download&id=${book.id}`;
+      const thumbSrc = book.thumb || `https://drive.google.com/thumbnail?id=${book.id}&sz=w600`;
+      const fallbackThumb = `https://drive.google.com/thumbnail?id=${book.id}&sz=w600`;
+
+      return `
+      <article class="book-tile-card">
+        <div class="book-tile-thumb-wrap" onclick="openPdfPreviewModal('${book.id}')" title="Click to Read Online">
+          <img
+            src="${thumbSrc}"
+            alt="${book.title}"
+            class="book-tile-thumb-img"
+            loading="lazy"
+            onerror="if(this.src !== '${fallbackThumb}') this.src='${fallbackThumb}';"
+          />
+          <span class="book-tile-free-badge">⬇ FREE PDF</span>
+        </div>
+
+        <div class="book-tile-body">
+          <div>
+            <h3 class="book-tile-urdu-title">${book.title}</h3>
+            <p class="book-tile-en-title">${book.englishTitle || ""}</p>
+          </div>
+
+          <div>
+            <div class="book-tile-author">
+              <span>✍ ${book.author || "الشیخ ابو محمد خرم شہزاد"}</span>
+              <span>${book.date || "2024"}</span>
+            </div>
+
+            <div class="book-tile-buttons">
+              <a
+                href="${directDownloadUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-tile-download"
+                onclick="showToast('Starting Free PDF Download...')"
+              >
+                ⬇ Download PDF
+              </a>
+              <button
+                type="button"
+                class="btn-tile-read"
+                onclick="openPdfPreviewModal('${book.id}')"
+              >
+                📖 Read Online
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+    })
+    .join("");
+}
+
+// ============================================================================
+// ONLINE PDF READER MODAL
+// ============================================================================
+window.openPdfPreviewModal = function (bookId) {
+  const book = ALL_PDF_BOOKS.find((b) => b.id === bookId);
+  if (!book) return;
+
+  const modal = document.getElementById("book-reader-modal");
+  const content = document.getElementById("book-modal-body");
+  const directDownloadUrl = book.downloadUrl || `https://drive.google.com/uc?export=download&id=${book.id}`;
+  const previewEmbedUrl = `https://drive.google.com/file/d/${book.id}/preview`;
+
+  content.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1rem; padding-right:2.5rem;">
+      <div>
+        <div class="section-tag" style="margin-bottom:0.2rem;">OFFICIAL AL-MIZAN PDF READER • FREE PUBLIC ACCESS</div>
+        <h2 style="font-family:var(--font-urdu); font-size:1.45rem; color:var(--gold-light);" dir="rtl">${book.title}</h2>
+        <div style="font-size:0.95rem; color:var(--text-secondary);">${book.englishTitle || ""} — <strong>${book.author}</strong></div>
+      </div>
+      <div style="display:flex; gap:0.65rem;">
+        <a href="${directDownloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding:0.6rem 1.15rem; font-size:0.86rem;">
+          ⬇ Direct Download PDF
+        </a>
+        <a href="https://drive.google.com/file/d/${book.id}/view" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding:0.6rem 1rem; font-size:0.86rem;">
+          ↗ Open Full Tab
+        </a>
+      </div>
+    </div>
+
+    <div style="width:100%; height:70vh; border-radius:12px; overflow:hidden; border:1px solid var(--gold-border-strong); background:#050a08;">
+      <iframe
+        src="${previewEmbedUrl}"
+        style="width:100%; height:100%; border:none;"
+        allow="autoplay"
+        title="${book.title}"
+      ></iframe>
+    </div>
+  `;
+
+  modal.classList.add("open");
+};
+
+window.closeBookModal = function () {
+  const modal = document.getElementById("book-reader-modal");
+  const content = document.getElementById("book-modal-body");
+  if (modal) modal.classList.remove("open");
+  if (content) content.innerHTML = "";
+};
+
+// ============================================================================
+// HADITH VERIFICATION WORKBENCH
+// ============================================================================
 function renderHadithWorkbench() {
   const container = document.getElementById("hadith-results-container");
   if (!container) return;
@@ -368,173 +394,216 @@ function renderHadithWorkbench() {
     .join("");
 }
 
-function renderScholarBooks() {
-  const grid = document.getElementById("khurram-books-grid");
-  if (!grid) return;
-
-  const filteredBooks = BOOKS_BY_KHURRAM_SHAHZAD.filter((b) => {
-    if (currentBookFilter === "all") return true;
-    return b.domain.toLowerCase().includes(currentBookFilter.toLowerCase());
+// ============================================================================
+// PRIVATE ADMIN PORTAL (RESTRICTED ONLY TO OWNER)
+// ============================================================================
+function checkUrlForAdminTrigger() {
+  if (window.location.hash === "#admin" || window.location.search.includes("admin=1")) {
+    openAdminPortal();
+  }
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#admin") {
+      openAdminPortal();
+    }
   });
-
-  grid.innerHTML = filteredBooks
-    .map(
-      (book) => `
-    <article class="book-card">
-      <div>
-        <div class="book-cover-visual">
-          <div class="book-cover-top">
-            <span>${book.code}</span>
-            <span>الميزان الحديث</span>
-          </div>
-          <div class="book-cover-arabic">${book.arabicTitle}</div>
-          <div class="book-cover-author">تأليف وتحقيق: أبو محمد خرم شهزاد</div>
-        </div>
-
-        <div class="book-meta-row">
-          <span class="book-badge">${book.domain}</span>
-          <span class="book-badge">${book.pages}</span>
-          <span class="book-badge">${book.year}</span>
-        </div>
-
-        <h3 class="book-title">${book.englishTitle}</h3>
-        <div class="book-urdu-title">${book.urduTitle}</div>
-        <p class="book-synopsis">${book.synopsis}</p>
-      </div>
-
-      <div class="book-actions">
-        <button class="btn-primary btn-sm" onclick="openBookModal('${book.id}')">
-          📖 Read Monograph & Chapters
-        </button>
-        <button class="btn-secondary btn-sm" onclick="copyBookCitation('${book.id}')">
-          ❝ Cite Work
-        </button>
-      </div>
-    </article>
-  `
-    )
-    .join("");
+  // Secret keyboard shortcut: Ctrl + Shift + A
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+      e.preventDefault();
+      openAdminPortal();
+    }
+  });
 }
 
-window.openBookModal = function (bookId) {
-  const book = BOOKS_BY_KHURRAM_SHAHZAD.find((b) => b.id === bookId);
-  if (!book) return;
-
-  const modal = document.getElementById("book-reader-modal");
-  const content = document.getElementById("book-modal-body");
-
-  content.innerHTML = `
-    <div class="section-tag">${book.code} • ${book.domain}</div>
-    <h2 style="font-size: 1.9rem; margin-bottom: 0.4rem; color: var(--text-primary);">${book.englishTitle}</h2>
-    <div style="font-family: var(--font-arabic); font-size: 1.55rem; color: var(--gold-primary); margin-bottom: 0.35rem;" dir="rtl">${book.arabicTitle}</div>
-    <div style="font-family: var(--font-urdu); font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.25rem;" dir="rtl">${book.urduTitle}</div>
-
-    <div style="display:flex; flex-wrap:wrap; gap:0.75rem; padding-bottom:1.25rem; border-bottom:1px solid var(--gold-border); font-size:0.86rem; color:var(--text-secondary);">
-      <span><strong>Author & Muhaddith:</strong> ${book.author}</span>
-      <span>•</span>
-      <span><strong>Publication:</strong> ${book.year}</span>
-      <span>•</span>
-      <span><strong>Extent:</strong> ${book.pages}</span>
-      <span>•</span>
-      <span><strong>Edition:</strong> ${book.language}</span>
-    </div>
-
-    <div class="chapter-preview-box">
-      <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-primary); font-weight:700; margin-bottom:0.75rem;">
-        Selected Arabic & English Manuscript Excerpt
-      </div>
-      <p style="font-family:var(--font-arabic); font-size:1.45rem; color:var(--text-primary); direction:rtl; text-align:right; margin-bottom:0.9rem; line-height:1.9;">
-        « ${book.excerptArabic} »
-      </p>
-      <p style="font-style:italic; color:var(--text-secondary); font-size:0.98rem;">
-        “${book.excerptEnglish}”
-      </p>
-    </div>
-
-    <h4 style="font-size:1.2rem; color:var(--gold-primary); margin-bottom:0.75rem;">Key Analytical Chapters in This Volume:</h4>
-    <ul style="list-style:none; display:grid; gap:0.55rem; margin-bottom:1.5rem;">
-      ${book.keyChapters
-        .map(
-          (ch) => `
-        <li style="background:var(--bg-card); border:1px solid var(--gold-border); padding:0.7rem 1rem; border-radius:8px; font-size:0.92rem;">
-          ✦ ${ch}
-        </li>
-      `
-        )
-        .join("")}
-    </ul>
-
-    <div style="background:var(--bg-primary); border:1px dashed var(--gold-border-strong); padding:1rem; border-radius:8px; font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">
-      <strong style="color:var(--gold-primary);">Academic Citation (MLA / Chicago Islamic Studies Standard):</strong><br/>
-      ${book.citation}
-    </div>
-
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <button class="btn-primary" onclick="downloadMonographSummary('${book.id}')">
-        ⬇ Download Scholarly Dossier & Table of Contents (.TXT)
-      </button>
-      <button class="btn-secondary" onclick="closeBookModal()">
-        Close Reader
-      </button>
-    </div>
-  `;
-
-  modal.classList.add("open");
+window.openAdminPortal = function () {
+  const modal = document.getElementById("admin-portal-modal");
+  if (modal) modal.classList.add("open");
 };
 
-window.closeBookModal = function () {
-  const modal = document.getElementById("book-reader-modal");
+window.closeAdminPortal = function () {
+  const modal = document.getElementById("admin-portal-modal");
   if (modal) modal.classList.remove("open");
+  if (window.location.hash === "#admin") {
+    history.replaceState(null, "", window.location.pathname);
+  }
 };
 
-window.copyBookCitation = function (bookId) {
-  const book = BOOKS_BY_KHURRAM_SHAHZAD.find((b) => b.id === bookId);
-  if (!book) return;
-  navigator.clipboard?.writeText(book.citation);
-  showToast(`Copied citation for "${book.englishTitle}"`);
+window.unlockAdminDashboard = function (e) {
+  if (e) e.preventDefault();
+  const pinInput = document.getElementById("admin-pin-input").value.trim();
+  const tokenInput = document.getElementById("admin-gh-token-input").value.trim();
+
+  // Default Owner PIN for Ameer Hamza / Abu Muhammad Khurram Shahzad: 9030 or zeroai903
+  if (pinInput !== "9030" && pinInput.toLowerCase() !== "zeroai903") {
+    showToast("❌ Invalid Admin Passcode! Access Denied.");
+    return;
+  }
+
+  if (tokenInput) {
+    localStorage.setItem("almizan_gh_token", tokenInput);
+  }
+
+  isAdminUnlocked = true;
+  document.getElementById("admin-lock-screen").style.display = "none";
+  document.getElementById("admin-dashboard-screen").style.display = "block";
+  const savedToken = localStorage.getItem("almizan_gh_token") || "";
+  const tokenField = document.getElementById("admin-saved-token");
+  if (tokenField && savedToken) tokenField.value = savedToken;
+  showToast("🔓 Welcome to Al-Mizan Private Admin Dashboard");
 };
 
-window.downloadMonographSummary = function (bookId) {
-  const book = BOOKS_BY_KHURRAM_SHAHZAD.find((b) => b.id === bookId);
-  if (!book) return;
-  const textContent = `====================================================================
-AL-MIZAN AL-HADITH ISLAMIC RESEARCH CENTER (الميزان الحديث)
-OFFICIAL MONOGRAPH DOSSIER & RESEARCH SYNOPSIS
-====================================================================
+function extractDriveFileId(input) {
+  if (!input) return "";
+  const trimmed = input.trim();
+  const match = trimmed.match(/[-\w]{25,45}/);
+  return match ? match[0] : trimmed;
+}
 
-Title (English): ${book.englishTitle}
-Title (Arabic) : ${book.arabicTitle}
-Title (Urdu)   : ${book.urduTitle}
-Author         : Abu Muhammad Khurram Shahzad (أبو محمد خرم شهزاد)
-Publication    : ${book.year} | ${book.pages} | ${book.domain}
+window.handleAdminAddBook = async function (e) {
+  if (e) e.preventDefault();
+  const urduTitle = document.getElementById("new-book-urdu-title").value.trim();
+  const enTitle = document.getElementById("new-book-en-title").value.trim();
+  const category = document.getElementById("new-book-category").value;
+  const driveLink = document.getElementById("new-book-drive-link").value.trim();
+  const pdfFileInput = document.getElementById("new-book-pdf-file");
+  const ghToken = document.getElementById("admin-saved-token").value.trim();
 
-SYNOPSIS:
-${book.synopsis}
+  if (!urduTitle) {
+    showToast("Please enter the Book Title.");
+    return;
+  }
 
-EXCERPT (ARABIC):
-${book.excerptArabic}
+  const statusBox = document.getElementById("admin-upload-status");
+  statusBox.style.display = "block";
+  statusBox.textContent = "⏳ Preparing new book entry...";
 
-EXCERPT (ENGLISH):
-"${book.excerptEnglish}"
+  if (ghToken) {
+    localStorage.setItem("almizan_gh_token", ghToken);
+  }
 
-TABLE OF CONTENTS HIGHLIGHTS:
-${book.keyChapters.map((c, i) => `${i + 1}. ${c}`).join("\n")}
+  let newBookEntry = null;
 
-ACADEMIC CITATION:
-${book.citation}
-====================================================================`;
+  // Case 1: Google Drive PDF link or File ID provided
+  if (driveLink) {
+    const fileId = extractDriveFileId(driveLink);
+    newBookEntry = {
+      id: fileId,
+      title: urduTitle,
+      englishTitle: enTitle || urduTitle,
+      category: category,
+      author: "الشیخ ابو محمد خرم شہزاد",
+      date: new Date().getFullYear().toString(),
+      thumb: `https://drive.google.com/thumbnail?id=${fileId}&sz=w600`
+    };
+  }
+  // Case 2: Local PDF File selected from computer
+  else if (pdfFileInput && pdfFileInput.files.length > 0) {
+    const file = pdfFileInput.files[0];
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-\u0600-\u06FF]/g, "_");
+    const customId = "LOCAL-" + Date.now();
 
-  const blob = new Blob([textContent], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${book.id}-Al-Mizan-Khurram-Shahzad.txt`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast("Downloaded Scholarly Monograph Dossier!");
+    if (ghToken) {
+      statusBox.textContent = "⏳ Uploading PDF file directly to GitHub repository...";
+      const b64Pdf = await fileToBase64(file);
+      await githubPutFile(
+        `pdfs/${safeName}`,
+        b64Pdf,
+        `Admin upload PDF: ${urduTitle}`,
+        ghToken
+      );
+    }
+
+    newBookEntry = {
+      id: customId,
+      title: urduTitle,
+      englishTitle: enTitle || urduTitle,
+      category: category,
+      author: "الشیخ ابو محمد خرم شہزاد",
+      date: new Date().getFullYear().toString(),
+      downloadUrl: `pdfs/${safeName}`,
+      thumb: "thumbnails/1gYh46VZmr0J0QYIDAWcCoTbnQCWmKfhH.jpg"
+    };
+  } else {
+    statusBox.textContent = "❌ Please provide either a Google Drive PDF Link or select a PDF file.";
+    return;
+  }
+
+  // Prepend to catalog
+  ALL_PDF_BOOKS.unshift(newBookEntry);
+  renderScholarBooksTiles();
+
+  // If GitHub Token is present, commit updated books.json directly to live repository
+  if (ghToken) {
+    try {
+      statusBox.textContent = "⏳ Publishing updated books.json to GitHub & Vercel...";
+      const jsonStr = JSON.stringify(ALL_PDF_BOOKS, null, 2);
+      const b64Json = btoa(unescape(encodeURIComponent(jsonStr)));
+      await githubPutFile(
+        "books.json",
+        b64Json,
+        `Publish new book: ${urduTitle}`,
+        ghToken
+      );
+      statusBox.textContent = "✅ Successfully published to live website! Vercel & GitHub Pages will update in ~15 seconds.";
+      showToast("Book published live to GitHub & Vercel!");
+    } catch (err) {
+      statusBox.textContent = "⚠️ Added to current preview, but GitHub push failed: " + err.message;
+    }
+  } else {
+    statusBox.textContent = "✅ Added to local preview! (Enter your GitHub Token above to push permanently, or ask your AI assistant in chat to push it for you.)";
+    showToast("Book added to preview!");
+  }
+
+  document.getElementById("admin-add-book-form").reset();
 };
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      const base64 = result.split(",")[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function githubPutFile(path, contentBase64, message, token) {
+  const owner = "Ameer-Hamza-Zerobee";
+  const repo = "al-mizan-al-hadith";
+  const uri = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json"
+  };
+
+  let sha = null;
+  try {
+    const getRes = await fetch(uri, { headers });
+    if (getRes.ok) {
+      const data = await getRes.json();
+      sha = data.sha;
+    }
+  } catch (e) {}
+
+  const body = { message, content: contentBase64, branch: "main" };
+  if (sha) body.sha = sha;
+
+  const putRes = await fetch(uri, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body)
+  });
+
+  if (!putRes.ok) {
+    const errText = await putRes.text();
+    throw new Error(errText);
+  }
+  return await putRes.json();
+}
 
 function showToast(message) {
   let toast = document.getElementById("almizan-toast");
@@ -553,7 +622,7 @@ function showToast(message) {
 }
 
 function setupEventListeners() {
-  // Search input
+  // Hadith search
   const searchInput = document.getElementById("hadith-search-input");
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
@@ -562,7 +631,16 @@ function setupEventListeners() {
     });
   }
 
-  // Category filter pills
+  // Book search
+  const bookSearchInput = document.getElementById("book-search-input");
+  if (bookSearchInput) {
+    bookSearchInput.addEventListener("input", (e) => {
+      currentBookSearch = e.target.value;
+      renderScholarBooksTiles();
+    });
+  }
+
+  // Hadith filter pills
   document.querySelectorAll("[data-hadith-filter]").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll("[data-hadith-filter]").forEach((b) => b.classList.remove("active"));
@@ -572,17 +650,17 @@ function setupEventListeners() {
     });
   });
 
-  // Book filter pills
+  // Book category filter pills
   document.querySelectorAll("[data-book-filter]").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll("[data-book-filter]").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       currentBookFilter = btn.getAttribute("data-book-filter");
-      renderScholarBooks();
+      renderScholarBooksTiles();
     });
   });
 
-  // Theme Toggle (Manuscript Dark vs Parchment Daylight)
+  // Theme Toggle
   const themeBtn = document.getElementById("theme-toggle-btn");
   if (themeBtn) {
     themeBtn.addEventListener("click", () => {
@@ -599,22 +677,27 @@ function setupEventListeners() {
     });
   }
 
-  // Language Switcher (EN / UR / AR)
+  // Language Switcher
   document.querySelectorAll("[data-lang-switch]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang-switch");
-      currentLang = lang;
       document.querySelectorAll("[data-lang-switch]").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       applyLanguage(lang);
     });
   });
 
-  // Close modal on backdrop click
+  // Close modals on backdrop click
   const modal = document.getElementById("book-reader-modal");
   if (modal) {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) closeBookModal();
+    });
+  }
+  const adminModal = document.getElementById("admin-portal-modal");
+  if (adminModal) {
+    adminModal.addEventListener("click", (e) => {
+      if (e.target === adminModal) closeAdminPortal();
     });
   }
 }
@@ -626,8 +709,8 @@ function applyLanguage(lang) {
 
   const map = {
     "nav-home-text": t.navHome,
-    "nav-tahqiq-text": t.navTahqiq,
     "nav-books-text": t.navBooks,
+    "nav-tahqiq-text": t.navTahqiq,
     "nav-pillars-text": t.navPillars,
     "nav-manuscripts-text": t.navManuscripts,
     "hero-eyebrow-text": t.heroEyebrow,
