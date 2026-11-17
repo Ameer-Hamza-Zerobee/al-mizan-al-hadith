@@ -1237,41 +1237,25 @@ section {
 }
 
 .book-tile-body {
-  padding: 1.15rem 1.25rem 1.3rem;
+  padding: 0.95rem 1rem 1.1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
   justify-content: space-between;
+  gap: 0.75rem;
 }
 
-.book-tile-urdu-title {
-  font-family: var(--font-urdu);
-  font-size: 1.12rem;
+.book-tile-clean-name {
+  font-family: var(--font-urdu), var(--font-en-sans);
+  font-size: 1.05rem;
   color: var(--gold-light);
-  direction: rtl;
-  text-align: right;
-  line-height: 2.05;
-  margin-bottom: 0.35rem;
+  text-align: center;
+  line-height: 1.85;
+  margin: 0;
+  font-weight: 700;
 }
-[data-theme="parchment"] .book-tile-urdu-title {
+[data-theme="parchment"] .book-tile-clean-name {
   color: var(--gold-dark);
-}
-
-.book-tile-en-title {
-  font-size: 0.86rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-}
-
-.book-tile-author {
-  font-size: 0.78rem;
-  color: var(--gold-primary);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .book-tile-buttons {
