@@ -65,6 +65,9 @@
         <button class="icon-btn" id="theme-toggle-btn" title="Switch Manuscript / Parchment Theme" aria-label="Switch Theme">
           ☀
         </button>
+        <button class="icon-btn" onclick="openAdminPortal()" title="Owner Admin Portal (Passcode Required)" aria-label="Owner Admin Portal">
+          🔒
+        </button>
       </div>
     </div>
   </header>
@@ -591,15 +594,25 @@
         </div>
         <div style="display:flex; align-items:center; gap:1rem;">
           <span>Global Waqf Digital Edition</span>
-          <!-- Discreet owner-only lock icon -->
-          <button onclick="openAdminPortal()" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.75rem; opacity:0.45;" title="Owner Admin">
-            🔒
+          <!-- Clear owner-only Admin button -->
+          <button onclick="openAdminPortal()" class="btn-secondary" style="padding:0.45rem 0.95rem; font-size:0.8rem;" title="Owner Admin Portal (Passcode Protected)">
+            🔒 Admin Portal
           </button>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="app.js?v=3"></script>
+  <!-- Floating Bottom-Right Owner Admin Lock Button -->
+  <button
+    onclick="openAdminPortal()"
+    title="Owner Admin Portal (Passcode: 9030)"
+    style="position:fixed; bottom:22px; right:22px; z-index:200; background:linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); color:#070d0a; border:1px solid var(--gold-light); border-radius:999px; padding:0.65rem 1.15rem; font-weight:700; font-size:0.84rem; cursor:pointer; box-shadow:0 8px 25px rgba(0,0,0,0.6); display:flex; align-items:center; gap:0.45rem;"
+  >
+    <span>🔒</span>
+    <span>Admin</span>
+  </button>
+
+  <script src="app.js?v=4"></script>
 </body>
 </html>
