@@ -219,7 +219,7 @@ function renderScholarBooksTiles() {
 
       return `
       <article class="book-tile-card">
-        <div class="book-tile-thumb-wrap" onclick="openPdfPreviewModal('${book.id}')" title="Click to Read Online">
+        <a href="${directDownloadUrl}" target="_blank" rel="noopener noreferrer" class="book-tile-thumb-wrap" title="Click Cover to Download PDF (${book.title})" onclick="showToast('Starting Free PDF Download...')">
           <img
             src="${thumbSrc}"
             alt="${book.title}"
@@ -228,38 +228,28 @@ function renderScholarBooksTiles() {
             onerror="if(this.src !== '${fallbackThumb}') this.src='${fallbackThumb}';"
           />
           <span class="book-tile-free-badge">⬇ FREE PDF</span>
-        </div>
+        </a>
 
         <div class="book-tile-body">
-          <div>
-            <h3 class="book-tile-urdu-title">${book.title}</h3>
-            <p class="book-tile-en-title">${book.englishTitle || ""}</p>
-          </div>
+          <h3 class="book-tile-clean-name">${book.title}</h3>
 
-          <div>
-            <div class="book-tile-author">
-              <span>✍ ${book.author || "الشیخ ابو محمد خرم شہزاد"}</span>
-              <span>${book.date || "2024"}</span>
-            </div>
-
-            <div class="book-tile-buttons">
-              <a
-                href="${directDownloadUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-tile-download"
-                onclick="showToast('Starting Free PDF Download...')"
-              >
-                ⬇ Download PDF
-              </a>
-              <button
-                type="button"
-                class="btn-tile-read"
-                onclick="openPdfPreviewModal('${book.id}')"
-              >
-                📖 Read Online
-              </button>
-            </div>
+          <div class="book-tile-buttons">
+            <a
+              href="${directDownloadUrl}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-tile-download"
+              onclick="showToast('Starting Free PDF Download...')"
+            >
+              ⬇ Download
+            </a>
+            <button
+              type="button"
+              class="btn-tile-read"
+              onclick="openPdfPreviewModal('${book.id}')"
+            >
+              📖 Read
+            </button>
           </div>
         </div>
       </article>
